@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import Price from './price.model.js';
+import Price from './price.model';
 
 const formatter = new Intl.DateTimeFormat('ru', {
   day: '2-digit',
@@ -11,7 +11,7 @@ const formatter = new Intl.DateTimeFormat('ru', {
 });
 
 const Prices = [
-  new Price({id: uuidv4(), Scheduled: 'test', priceValue: 15, priceCurrecy: 25, createdAt: '2020-1-1', updateAt: '2020-1-2'})
+  new Price({id: uuidv4(), scheduleID: 'test', priceValue: 15,  createdAt: '2020-1-1', updateAt: '2020-1-2'})
 ];
 
 const getAll = async () => Prices;

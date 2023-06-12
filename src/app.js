@@ -17,18 +17,15 @@ app.set('views', path.resolve(__dirname, 'src/ejs'));
 app.use(express.json());
 
 app.use('/', (req, res, next) => {
-    if (req.originalUrl === '/') {
-
-        res.render(path.resolve(__dirname, 'src/ejs', 'main.ejs'));
-        return;
-    }
-    next();
+  if (req.originalUrl === '/') {
+    res.render(path.resolve(__dirname, 'src/ejs', 'main.ejs'));
+    return;
+  }
+  next();
 });
-
 
 app.use('/tours', tourRouter)
 app.use('/schedules', scheduleRouter)
 app.use('/prices', priceRouter)
-
 
 export default app;

@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import Price from './price.model.js';
+import Price from './price.model';
 
 const formatter = new Intl.DateTimeFormat('ru', {
   day: '2-digit',

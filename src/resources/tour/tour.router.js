@@ -1,8 +1,8 @@
 import { Router } from 'express';
 
 import Tour from './tour.model.js';
-import * as tourService from './tour.service.js';
-import { getByTourId } from '../schedule/schedule.memory.repository.js'
+import * as tourService from './tour.service';
+import { getByTourId } from '../schedule/schedule.memory.repository'
 
 const router = Router();
 
@@ -58,11 +58,6 @@ router.route('/:id').put((async (req, res) => {
   
   const price = tourService.updateById({id, title, slug, description, isActive });
 
-  if (price) {
-    res.redirect('/tours');
-  } else {
-    res.status(400).json({ code: 'USER_NOT_FOUND', msg: 'User not found' });
-  }
 })
 );
 
